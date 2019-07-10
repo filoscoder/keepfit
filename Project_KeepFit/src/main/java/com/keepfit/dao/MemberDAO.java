@@ -7,6 +7,9 @@ import com.keepfit.domain.MemberVO;
 
 public interface MemberDAO {
 	
+	// 기존회원 로그인
+	public MemberVO loginMember(MemberVO vo);
+	
 	// 회원 가입
 	public void insertMember(MemberVO vo);
 	

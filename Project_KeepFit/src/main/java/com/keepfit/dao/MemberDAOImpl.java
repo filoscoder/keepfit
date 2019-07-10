@@ -16,7 +16,12 @@ public class MemberDAOImpl implements MemberDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
-
+	@Override
+	public MemberVO loginMember(MemberVO vo) {
+		System.out.println("===> Mybatis getMember() 호출");
+		MemberVO login = new MemberVO();
+		return (MemberVO) mybatis.selectOne("db.loginMember", vo);
+	}
 	
 	// 회원 가입
 	@Override
@@ -54,6 +59,8 @@ public class MemberDAOImpl implements MemberDAO{
 		System.out.println("===> Mybatis getMemberList() 호출");
 		return mybatis.selectList("db.getMemberList", vo);
 	}
+
+	
 	
 	
 }	// end of MemberDAOImpl

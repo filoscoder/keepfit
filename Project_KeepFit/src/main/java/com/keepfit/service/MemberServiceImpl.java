@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.keepfit.dao.MemberDAO;
 import com.keepfit.dao.MemberDAOImpl;
 import com.keepfit.domain.MemberVO;
 
@@ -13,25 +14,27 @@ import com.keepfit.domain.MemberVO;
 public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
-	private MemberDAOImpl memberDAO;
+	private MemberDAO memberDAO;
 
 
 	@Override
+	public MemberVO loginMember(MemberVO vo) {
+		return memberDAO.loginMember(vo);
+	}
+	
+	@Override
 	public void insertMember(MemberVO vo) {
-		memberDAO.insertMember(vo);
-		
+		memberDAO.insertMember(vo);		
 	}
 
 	@Override
 	public void updateMember(MemberVO vo) {
-		memberDAO.updateMember(vo);
-		
+		memberDAO.updateMember(vo);		
 	}
 
 	@Override
 	public void deleteMember(MemberVO vo) {
-		memberDAO.deleteMember(vo);
-		
+		memberDAO.deleteMember(vo);		
 	}
 
 	@Override
@@ -43,4 +46,6 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> getMemberList(MemberVO vo) {
 		return memberDAO.getMemberList(vo);
 	}
+
+
 }

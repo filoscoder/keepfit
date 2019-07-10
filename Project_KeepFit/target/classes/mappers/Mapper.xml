@@ -40,11 +40,12 @@
 <!--  		]]> -->
 <!-- 	</select>	 -->
 	
-<!-- 	<select id="getCommentList" parameterType="comment" resultMap="comment"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
+	<select id="getCommentList" parameterType="comment" resultMap="comment">
+		<![CDATA[
+		SELECT * FROM comment
+		WHERE post_id =  #{post_id}
+  		]]>
+	</select>
 	
 <!-- *********************************** END OF [ COMMENT DB ] *********************************** -->
 
@@ -72,6 +73,16 @@
 
 
 <!-- *********************************** [ MEMBER DB ] *********************************** -->
+	
+	<select id="loginMember" parameterType="member" resultType="member">
+		<![CDATA[
+  		SELECT * FROM member 
+  		WHERE (member_email = #{member_email})
+  			AND (member_pass = #{member_pass})
+  		]]>
+	</select>
+	
+	
 	<insert id="insertMember" parameterType="member">
 		<![CDATA[
  		INSERT INTO member
@@ -93,13 +104,13 @@
 <!--  		]]> -->
 <!-- 	</delete> -->
 	
-	<select id="getMember" parameterType="member" resultType="member">
-		<![CDATA[
-  		SELECT * FROM member 
-  		WHERE (member_email = #{member_email})
-  			AND (member_pass = #{member_pass})
-  		]]>
-	</select>
+<!-- 	<select id="getMember" parameterType="member" resultType="member"> -->
+<!-- 		<![CDATA[ -->
+<!--   		SELECT * FROM member  -->
+<!--   		WHERE (member_email = #{member_email}) -->
+<!--   			AND (member_pass = #{member_pass}) -->
+<!--   		]]> -->
+<!-- 	</select> -->
 	
 	
 <!-- 	<select id="getMemberList" parameterType="member" resultMap="member"> -->

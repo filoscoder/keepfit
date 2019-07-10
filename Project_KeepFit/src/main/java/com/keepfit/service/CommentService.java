@@ -22,4 +22,7 @@ public interface CommentService {
 
 	// 댓글 개수 조회
 	int getComment(CommentVO vo);
+	
+	// 게시물의 댓글 list 조회
+	List<CommentVO> getCommentList(CommentVO vo);
 }
