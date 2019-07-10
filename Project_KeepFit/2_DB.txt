@@ -1,0 +1,7 @@
+
+ << My Batis >>
+ 
+ 1. mybatis-config.xml
+ 	
+ 		- Alias 지정
+ 		

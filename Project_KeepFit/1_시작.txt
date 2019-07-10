@@ -1,0 +1,149 @@
+﻿
+1. 프로젝트 생성
+
+	New > Project > Spring - Spring Legacy Project > Spring MVC Project
+	
+	packages : com.teamsix.basic
+	
+	
+2. 프로젝트 > Properties
+
+	- Project Facets : java 1.8 변경
+	- server :  tomcat
+	
+	
+3. Servers 창에서 구동하는 톰캣을 더블클릭하여 
+
+	Modules 탭을 열고 Docbase와 path를 프로젝트명과 동일하게
+
+	
+4. 톰캣서버 실행 후 웹브라우저에서 확인
+	` Servers > tomcat 서버 구동 
+	
+	` 웹브라우저에서  http://localhost:8080/path명(프로젝트명)
+	
+	
+5. pom.xml에 라이브러리 버전 변경 및 라이브러리 추가 
+
+		<!-- ### 버전 변경 ### -->
+				<java-version>1.8</java-version>
+				<org.springframework-version>5.0.8.RELEASE</org.springframework-version>
+				<org.aspectj-version>1.6.10</org.aspectj-version>
+				<org.slf4j-version>1.6.6</org.slf4j-version>
+
+
+<!-- 마이바티스 추가  -->
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+        
+        <!-- mybatis-spring -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        
+          <!--  SPRING JDBC 필요 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>    
+        
+        <!-- 트랜잭션 필요 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+		
+		<!-- ### 버전 변경 ### -->		
+		<plugin>		            	
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            
+            
+6. 프로젝트 > Maven > Update Project (Alt + F5)
+	
+	
+7. web.xml 
+	<!-- 한글인코딩  -->
+      <filter>
+          <filter-name>charEncoding</filter-name>
+          <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+          <init-param>
+              <param-name>encoding</param-name>
+              <param-value>UTF-8</param-value>
+          </init-param>
+      </filter>
+      <filter-mapping>
+          <filter-name>charEncoding</filter-name>
+          <url-pattern>/*</url-pattern>
+      </filter-mapping>
+      
+      
+      
+
+8. CONTROLLER >> servlet-context.xml
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+			<context:component-scan base-package="com.keepfit" />
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+
+
+9. DB 연결 >> root-context.xml
+
+<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url"
+			value="jdbc:oracle:thin:@192.168.0.170:1521:orcl"></property>
+		<property name="username" value="keepfit"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation"
+			value="classpath:/mybatis-config.xml"></property>
+		<property name="mapperLocations"
+			value="classpath:mappers/**/*Mapper.xml"></property>
+	</bean>
+
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate"
+		destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory"
+			ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+
+
+
+
+

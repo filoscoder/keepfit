@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<typeAliases>
+	
+		<!-- Class : CommentVO -->
+		<!-- Alias : comment -->
+		<typeAlias alias="comment" type="com.keepfit.domain.CommentVO" />
+
+		<!-- Class : LikeVO -->
+		<!-- Alias : like -->
+		<typeAlias alias="like" type="com.keepfit.domain.LikeVO" />
+
+		<!-- Class : MemberVO -->
+		<!-- Alias : member -->
+		<typeAlias alias="member" type="com.keepfit.domain.MemberVO" />
+
+		<!-- Class : SportVO -->
+		<!-- Alias : sport -->
+		<typeAlias alias="sport" type="com.keepfit.domain.SportVO" />
+
+		<!-- Class : PostVO -->
+		<!-- Alias : post -->
+		<typeAlias alias="post" type="com.keepfit.domain.PostVO" />
+
+		<!-- Class : MoodVO -->
+		<!-- Alias : mood -->
+		<typeAlias alias="mood" type="com.keepfit.domain.MoodVO" />
+		
+		
+	</typeAliases>
+
+</configuration>
+

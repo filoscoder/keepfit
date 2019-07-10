@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="db">
+
+<!-- 	<resultMap id="member" type="board"> -->
+<!-- 		<id property="seq" column="SEQ" /> -->
+<!-- 		<result property="title" column="TITLE" /> -->
+<!-- 		<result property="writer" column="WRITER" /> -->
+<!-- 		<result property="content" column="CONTENT" /> -->
+<!-- 		<result property="regDate" column="REGDATE" /> -->
+<!-- 		<result property="cnt" column="CNT" /> -->
+<!-- 	</resultMap> -->
+	
+
+
+
+<!-- *********************************** [ COMMENT DB ] *********************************** -->
+<!-- 	<insert id="insertComment" parameterType="comment"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</insert> -->
+	
+<!-- 	<update id="updateComment" parameterType="comment"> -->
+<!-- 		<![CDATA[ -->
+<!-- 		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]>  -->
+<!-- 	</update> -->
+	
+<!-- 	<delete id="deleteComment" parameterType="comment"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</delete> -->
+	
+<!-- 	<select id="getComment" parameterType="comment" resultType="comment"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select>	 -->
+	
+<!-- 	<select id="getCommentList" parameterType="comment" resultMap="comment"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+	
+<!-- *********************************** END OF [ COMMENT DB ] *********************************** -->
+
+
+<!-- *********************************** [ LIKE DB ] *********************************** -->
+<!-- 	<insert id="insertLike" parameterType="like"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</insert>	 -->
+		
+<!-- 	<delete id="deleteLike" parameterType="like"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</delete> -->
+	
+<!-- 	<select id="getLike" parameterType="like" resultType="like"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+		
+<!--  *********************************** END OF [ LIKE DB ] *********************************** -->
+
+
+<!-- *********************************** [ MEMBER DB ] *********************************** -->
+	<insert id="insertMember" parameterType="member">
+		<![CDATA[
+ 		INSERT INTO member
+ 		(member_id, member_email, member_pass, member_nick, member_channel, regdate) 
+ 		VALUES (#{member_id}, #{member_email}, #{member_pass}, #{member_nick}, 0, sysdate)		
+ 		
+ 		]]>
+	</insert>
+	
+<!-- 	<update id="updateMember" parameterType="member"> -->
+<!-- 		<![CDATA[ -->
+<!-- 		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]>  -->
+<!-- 	</update> -->
+	
+<!-- 	<delete id="deleteMember" parameterType="member"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</delete> -->
+	
+<!-- 	<select id="getMember" parameterType="member" resultType="member"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+	
+	
+<!-- 	<select id="getMemberList" parameterType="member" resultMap="member"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+	
+<!-- *********************************** END OF [ MEMBER DB ] *********************************** --> 
+
+
+<!--  *********************************** [ MOOD DB ] *********************************** -->
+<!-- 	<select id="getMood" parameterType="mood" resultType="mood"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+		
+<!--  *********************************** END OF [ MOOD DB ] *********************************** -->
+
+
+<!--  *********************************** [ POST DB ] *********************************** -->
+<!-- 	<insert id="insertPost" parameterType="post"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</insert> -->
+	
+<!-- 	<update id="updatePost" parameterType="post"> -->
+<!-- 		<![CDATA[ -->
+<!-- 		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]>  -->
+<!-- 	</update> -->
+	
+<!-- 	<delete id="deletePost" parameterType="post"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</delete> -->
+	
+<!-- 	<select id="getPost" parameterType="post" resultType="post"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+	
+	
+<!-- 	<select id="getPostList" parameterType="post" resultMap="post"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+	
+<!--  *********************************** END OF [ POST DB ] *********************************** -->
+
+
+<!--  *********************************** [ MOOD DB ] *********************************** -->
+<!-- 	<select id="getSport" parameterType="sport" resultType="sport"> -->
+<!-- 		<![CDATA[ -->
+<!--  		*************{{{{ QUERY }}}}**************** -->
+<!--  		]]> -->
+<!-- 	</select> -->
+		
+<!--  *********************************** END OF [ MOOD DB ] *********************************** -->
+
+
+</mapper>
