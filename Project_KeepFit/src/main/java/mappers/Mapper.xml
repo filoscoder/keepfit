@@ -75,8 +75,8 @@
 	<insert id="insertMember" parameterType="member">
 		<![CDATA[
  		INSERT INTO member
- 		(member_id, member_email, member_pass, member_nick, member_channel, regdate) 
- 		VALUES (#{member_id}, #{member_email}, #{member_pass}, #{member_nick}, 0, sysdate)		
+ 		(member_id, member_email, member_pass, member_channel, member_nick, now_weight, goal_weight, sport1, sport2, sport3, regdate) 
+ 		VALUES (member_memberid_seq.nextval, #{member_email}, #{member_pass}, 0, #{member_nick}, #{now_weight}, #{goal_weight}, #{sport1}, #{sport2}, #{sport3}, sysdate)		
  		
  		]]>
 	</insert>

@@ -23,4 +23,9 @@ public interface MemberService {
 
 		// 다수 회원 조회
 		List<MemberVO> getMemberList(MemberVO vo);
+
+		MemberVO idCheck_Login(MemberVO vo);
+		
+		// 로그인시 id 조회
+		MemberVO loginMember(MemberVO vo);
 }

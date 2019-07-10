@@ -21,4 +21,7 @@ public interface MemberDAO {
 
 	// 다수 회원 조회
 	public List<MemberVO> getMemberList(MemberVO vo);
+
+	// 회원가입 및 로그인시 id체크	
+	MemberVO idCheck(MemberVO vo);
 }

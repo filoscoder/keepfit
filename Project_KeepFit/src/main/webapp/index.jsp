@@ -18,14 +18,13 @@
 <a href="login.fit">TEST : 로그인</a>
 
 
-<form action="signup.fit">
+<form action="TEST-signup.do" method="get">
 <ul>
-<li>회원 번호: <input type="text" name="member_id">
-<li>이메일 :<input type="text" name="member_email">
-<li>비밀번호 : <input type="text" name="member_pass">
-<li>NICKNAME : <input type="text" name="member_nick">
 
-<li><input type="submit" value="TEST : signup">
+<li>이메일 :<input type="text" name="email">
+<li>비밀번호 : <input type="text" name="pass">
+
+<li><input type="submit" value="TEST : signup" >
 </ul>
 </form>
 

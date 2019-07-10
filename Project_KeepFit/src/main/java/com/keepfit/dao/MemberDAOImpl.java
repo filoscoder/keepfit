@@ -16,7 +16,12 @@ public class MemberDAOImpl implements MemberDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
-
+	// 가입 시 id 중복체크 & 로그인 시 id 체크
+	@Override	
+	public MemberVO idCheck(MemberVO vo) {
+		System.out.println("===> MemberMapper idCheck 호출");
+		return mybatis.selectOne("db.idCheck", vo);
+	}
 	
 	// 회원 가입
 	@Override

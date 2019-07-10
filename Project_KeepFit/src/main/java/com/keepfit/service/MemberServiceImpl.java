@@ -43,4 +43,16 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> getMemberList(MemberVO vo) {
 		return memberDAO.getMemberList(vo);
 	}
+
+	@Override
+	public MemberVO idCheck_Login(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public MemberVO loginMember(MemberVO vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

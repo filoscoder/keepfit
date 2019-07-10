@@ -12,7 +12,7 @@ public class MemberVO {
 	private String 	member_channel;	// 회원 가입경로 (SSO || NATIVE)
 	private String 	member_nick;	// 회원 별칭 (UK)
 	private String 	member_bio;		// 프로필 메시지
-	private String 	now_weigth;		// 현재 몸무게
+	private String 	now_weight;		// 현재 몸무게
 	private String 	goal_weight;	// 목표 몸무게
 	private String 	sport1;			// 운동1
 	private String 	sport2;			// 운동2
@@ -64,11 +64,11 @@ public class MemberVO {
 		this.member_bio = member_bio;
 	}
 
-	public String getNow_weigth() {
-		return now_weigth;
+	public String getNow_weight() {
+		return now_weight;
 	}
-	public void setNow_weigth(String now_weigth) {
-		this.now_weigth = now_weigth;
+	public void setNow_weight(String now_weight) {
+		this.now_weight = now_weight;
 	}
 
 	public String getGoal_weight() {
@@ -122,7 +122,7 @@ public class MemberVO {
 				+"\n pw=" + member_pass
 				+"\n nick=" + member_nick
 				+"\n bio=" + member_bio
-				+"\n 현재 몸무게=" + now_weigth
+				+"\n 현재 몸무게=" + now_weight
 				+"\n 목표 몸무게=" + goal_weight				
 				+"\n sport1=" + sport1
 				+"\n sport2=" + sport2
