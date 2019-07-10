@@ -15,7 +15,7 @@
 <hr/>
 <hr/>
 
-<form action="signup.do">
+<form action="signup.fit">
 <ul>
 <li>회원 번호: <input type="text" name="member_id">
 <li>이메일 :<input type="text" name="member_email">
