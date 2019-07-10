@@ -93,11 +93,13 @@
 <!--  		]]> -->
 <!-- 	</delete> -->
 	
-<!-- 	<select id="getMember" parameterType="member" resultType="member"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
+	<select id="getMember" parameterType="member" resultType="member">
+		<![CDATA[
+  		SELECT * FROM member 
+  		WHERE (member_email = #{member_email})
+  			AND (member_pass = #{member_pass})
+  		]]>
+	</select>
 	
 	
 <!-- 	<select id="getMemberList" parameterType="member" resultMap="member"> -->
