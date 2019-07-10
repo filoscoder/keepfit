@@ -17,16 +17,16 @@ public class Controller {
 	@Autowired
 	private MemberService memberService;
 	
-	@RequestMapping(value = {"signup.fit"})
-	public void test(MemberVO vo) {
+	@RequestMapping(value = {"signup.do"})
+	public ModelAndView test(MemberVO vo) {
 		memberService.insertMember(vo); // 지금은 vo가 비어있는 상태
 		
 		// (1) Model
 		// (2) ModelAndView
 		// (3) 함수위에 @ModelAttribute
 		ModelAndView mv = new ModelAndView();
-		mv.set
-		mv.setViewName("home.jsp");
+		mv.setViewName("home");
+		return mv;
 	}
 
 

@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.teamsix.keepfit">
+	<logger name="com.teamsix.basic">
 		<level value="info" />
 	</logger>
 	
