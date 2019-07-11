@@ -20,9 +20,10 @@ public class PostDAOImpl implements PostDAO{
 
 	// 게시물 등록
 	@Override
-	public void insertPost(PostVO vo) {
+	public int insertPost(PostVO vo) {
 		System.out.println("===> Mybatis insertPost() 호출");
 		mybatis.insert("db.insertPost", vo);			
+		return mybatis.selectOne("db.countPost", vo);			
 	}
 	
 	// 게시물 수정

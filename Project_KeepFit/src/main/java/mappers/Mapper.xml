@@ -3,75 +3,91 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="db">
 
-<!-- 	<resultMap id="member" type="board"> -->
-<!-- 		<id property="seq" column="SEQ" /> -->
-<!-- 		<result property="title" column="TITLE" /> -->
-<!-- 		<result property="writer" column="WRITER" /> -->
-<!-- 		<result property="content" column="CONTENT" /> -->
-<!-- 		<result property="regDate" column="REGDATE" /> -->
-<!-- 		<result property="cnt" column="CNT" /> -->
-<!-- 	</resultMap> -->
-	
+	<!-- <resultMap id="member" type="board"> -->
+	<!-- <id property="seq" column="SEQ" /> -->
+	<!-- <result property="title" column="TITLE" /> -->
+	<!-- <result property="writer" column="WRITER" /> -->
+	<!-- <result property="content" column="CONTENT" /> -->
+	<!-- <result property="regDate" column="REGDATE" /> -->
+	<!-- <result property="cnt" column="CNT" /> -->
+	<!-- </resultMap> -->
 
 
 
-<!-- *********************************** [ COMMENT DB ] *********************************** -->
-<!-- 	<insert id="insertComment" parameterType="comment"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</insert> -->
-	
-<!-- 	<update id="updateComment" parameterType="comment"> -->
-<!-- 		<![CDATA[ -->
-<!-- 		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]>  -->
-<!-- 	</update> -->
-	
-<!-- 	<delete id="deleteComment" parameterType="comment"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</delete> -->
-	
-<!-- 	<select id="getComment" parameterType="comment" resultType="comment"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select>	 -->
-	
-<!-- 	<select id="getCommentList" parameterType="comment" resultMap="comment"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
-	
-<!-- *********************************** END OF [ COMMENT DB ] *********************************** -->
+
+	<!-- *********************************** [ COMMENT DB ] *********************************** -->
+	<insert id="insertComment" parameterType="comment">
+		<![CDATA[
+  		INSERT INTO cmt 
+  		(cmt_id, cmt_writer, cmt_content, post_id) 
+  		VALUES (#{comment_id}, #{comment_writer}, #{comment_content}, #{post_id}) 
+		]]>
+	</insert>
+
+	<select id="getCommentCnt" parameterType="comment"
+		resultType="int">
+	<![CDATA[
+	SELECT count(*) FROM cmt
+	WHERE post_id = #{post_id}
+ 		]]>
+	</select>
+
+	<select id="getComment" parameterType="comment"
+		resultType="comment">
+	<![CDATA[
+	SELECT * FROM cmt
+	WHERE comment_id = #{comment_id} AND comment_writer = #{comment_writer}
+ 	]]>
+	</select>
+
+	<update id="updateComment" parameterType="comment">
+		<![CDATA[
+		UPDATE cmt SET comment_content = #{comment_content} 
+		WHERE post_id = #{post_id} AND comment_writer = #{comment_writer}
+ 		]]>
+	</update>
+
+	<delete id="deleteComment" parameterType="comment">
+	<![CDATA[
+	DELETE FROM cmt 
+	WHERE post_id = #{post_id} AND comment_writer = #{comment_writer}
+ 		]]>
+	</delete>
 
 
-<!-- *********************************** [ LIKE DB ] *********************************** -->
-<!-- 	<insert id="insertLike" parameterType="like"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</insert>	 -->
-		
-<!-- 	<delete id="deleteLike" parameterType="like"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</delete> -->
-	
-<!-- 	<select id="getLike" parameterType="like" resultType="like"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
-		
-<!--  *********************************** END OF [ LIKE DB ] *********************************** -->
+
+	<!-- <select id="getCommentList" parameterType="comment" resultMap="comment"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </select> -->
+
+	<!-- *********************************** END OF [ COMMENT DB ] *********************************** -->
 
 
-<!-- *********************************** [ MEMBER DB ] *********************************** -->
+	<!-- *********************************** [ LIKE DB ] *********************************** -->
+	<!-- <insert id="insertLike" parameterType="like"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </insert> -->
+
+	<!-- <delete id="deleteLike" parameterType="like"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </delete> -->
+
+	<!-- <select id="getLike" parameterType="like" resultType="like"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </select> -->
+
+	<!-- *********************************** END OF [ LIKE DB ] *********************************** -->
+
+
+	<!-- *********************************** [ MEMBER DB ] *********************************** -->
 	<insert id="insertMember" parameterType="member">
 		<![CDATA[
  		INSERT INTO member
@@ -80,90 +96,113 @@
  		
  		]]>
 	</insert>
-	
-<!-- 	<update id="updateMember" parameterType="member"> -->
-<!-- 		<![CDATA[ -->
-<!-- 		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]>  -->
-<!-- 	</update> -->
-	
-<!-- 	<delete id="deleteMember" parameterType="member"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</delete> -->
-	
-	<select id="getMember" parameterType="member" resultType="member">
+
+	<!-- <update id="updateMember" parameterType="member"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </update> -->
+
+	<!-- <delete id="deleteMember" parameterType="member"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </delete> -->
+
+	<select id="getMember" parameterType="member"
+		resultType="member">
 		<![CDATA[
   		SELECT * FROM member 
   		WHERE (member_email = #{member_email})
   			AND (member_pass = #{member_pass})
   		]]>
 	</select>
-	
-	
-<!-- 	<select id="getMemberList" parameterType="member" resultMap="member"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
-	
-<!-- *********************************** END OF [ MEMBER DB ] *********************************** --> 
 
 
-<!--  *********************************** [ MOOD DB ] *********************************** -->
-<!-- 	<select id="getMood" parameterType="mood" resultType="mood"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
-		
-<!--  *********************************** END OF [ MOOD DB ] *********************************** -->
+	<!-- <select id="getMemberList" parameterType="member" resultMap="member"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </select> -->
+
+	<select id="loginMember" parameterType="member"
+		resultType="member">
+		<![CDATA[
+  		SELECT * FROM member 
+  		WHERE (member_email = #{member_email})
+  			AND (member_pass = #{member_pass})
+  		]]>
+	</select>
+
+	<!-- *********************************** END OF [ MEMBER DB ] *********************************** -->
 
 
-<!--  *********************************** [ POST DB ] *********************************** -->
-<!-- 	<insert id="insertPost" parameterType="post"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</insert> -->
-	
-<!-- 	<update id="updatePost" parameterType="post"> -->
-<!-- 		<![CDATA[ -->
-<!-- 		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]>  -->
-<!-- 	</update> -->
-	
-<!-- 	<delete id="deletePost" parameterType="post"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</delete> -->
-	
-<!-- 	<select id="getPost" parameterType="post" resultType="post"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
-	
-	
-<!-- 	<select id="getPostList" parameterType="post" resultMap="post"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
-	
-<!--  *********************************** END OF [ POST DB ] *********************************** -->
+	<!-- *********************************** [ MOOD DB ] *********************************** -->
+	<!-- <select id="getMood" parameterType="mood" resultType="mood"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </select> -->
+
+	<!-- *********************************** END OF [ MOOD DB ] *********************************** -->
 
 
-<!--  *********************************** [ MOOD DB ] *********************************** -->
-<!-- 	<select id="getSport" parameterType="sport" resultType="sport"> -->
-<!-- 		<![CDATA[ -->
-<!--  		*************{{{{ QUERY }}}}**************** -->
-<!--  		]]> -->
-<!-- 	</select> -->
-		
-<!--  *********************************** END OF [ MOOD DB ] *********************************** -->
+	<!-- *********************************** [ POST DB ] *********************************** -->
+	<insert id="insertPost" parameterType="post">
+	<![CDATA[
+	INSERT INTO post
+	(post_id, post_writer, selected_date, post_date, post_mood, 
+	member_tag, sport_name, place_tag, place_dest_tag, pic_count, 
+	privacy, content, total_calories, distante)
+	VALUES (#{post_id}, #{post_writer}, #{selected_date}, sysdate, #{post_mood}, 
+	#{member_tag}, #{sport_name}, #{place_tag}, #{place_dest_tag}, #{pic_count}, 
+	#{privacy}, #{content}, #{total_calories}, #{distance})
+	]]>
+	</insert>
+
+	<!-- <update id="updatePost" parameterType="post"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </update> -->
+
+	<!-- <delete id="deletePost" parameterType="post"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </delete> -->
+
+	<!-- <select id="getPost" parameterType="post" resultType="post"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </select> -->
+
+	<select id="countPost" parameterType="post" resultType="int">
+	<![CDATA[
+	SELECT count(*) FROM post
+	WHERE post_writer = #{post_writer}
+	]]>
+	</select>
+
+
+	<!-- <select id="getPostList" parameterType="post" resultMap="post"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </select> -->
+
+	<!-- *********************************** END OF [ POST DB ] *********************************** -->
+
+
+	<!-- *********************************** [ MOOD DB ] *********************************** -->
+	<!-- <select id="getSport" parameterType="sport" resultType="sport"> -->
+	<!-- <![CDATA[ -->
+	<!-- *************{{{{ QUERY }}}}**************** -->
+	<!-- ]]> -->
+	<!-- </select> -->
+
+	<!-- *********************************** END OF [ MOOD DB ] *********************************** -->
 
 
 </mapper>

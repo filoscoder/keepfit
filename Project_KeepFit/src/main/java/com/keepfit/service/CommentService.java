@@ -12,7 +12,8 @@ public interface CommentService {
 	// CRUD 기능의 메소드 구현	
 	
 	// 댓글 추가
-	void insertComment(CommentVO vo);
+	// 댓글 개수 조회
+	int insertComment(CommentVO vo);
 	
 	// 댓글 수정
 	void updateComment(CommentVO vo) ;
@@ -20,6 +21,9 @@ public interface CommentService {
 	// 댓글 삭제
 	void deleteComment(CommentVO vo);
 
-	// 댓글 개수 조회
-	int getComment(CommentVO vo);
+	// 댓글 상세 표시
+	CommentVO getComment(CommentVO vo);
+	
+	// 게시물의 댓글 list 조회
+	List<CommentVO> getCommentList(CommentVO vo);
 }

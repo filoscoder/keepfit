@@ -11,17 +11,16 @@
 </head>
 <body>
 
-	<hr />
-	<hr />
-	<hr />
-
-	</table>
-	<c:set var="logged" value="${commentStatus}" />
+	<hr />	<hr />	<hr />
+	
+	<c:set var="commentStatus" value="${commentStatus}" />
 	<c:choose>
-		<c:when test="${commentStatus eq '1'}">
+		<c:when test="${commentStatus eq 'insert1'}">
 			<h2>[ 회원정보 ]</h2>
 			<table>
+			<tr>
 				<td colspan="2">POST NUMBER: ${commentList.post_id}</td>
+				</tr>
 				<tr>
 					<th>WRITER</th>
 					<th>CONTENT</th>
@@ -34,7 +33,7 @@
 				</c:forEach>
 			</table>
 		</c:when>
-		<c:when test="${commentStatus eq '0'}">
+		<c:when test="${commentStatus eq 'insert0'}">
 			<h1 align="center">댓글이 없습니다 ㅜㅜ</h1>
 		</c:when>
 		<c:otherwise>
@@ -42,9 +41,7 @@
     </c:otherwise>
 	</c:choose>
 
-	<hr />
-	<hr />
-	<hr />
+	<hr />	<hr />	<hr />
 
 </body>
 </html>

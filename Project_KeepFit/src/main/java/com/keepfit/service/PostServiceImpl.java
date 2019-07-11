@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.keepfit.dao.MemberDAOImpl;
-import com.keepfit.dao.PostDAOImpl;
-import com.keepfit.domain.MemberVO;
+
+import com.keepfit.dao.PostDAO;
 import com.keepfit.domain.PostVO;
 
 
@@ -15,12 +14,12 @@ import com.keepfit.domain.PostVO;
 public class PostServiceImpl implements PostService {
 	
 	@Autowired
-	private PostDAOImpl postDAO;
+	private PostDAO postDAO;
 
 
 	@Override
-	public void insertPost(PostVO vo) {
-		postDAO.insertPost(vo);
+	public int insertPost(PostVO vo) {
+		return postDAO.insertPost(vo);
 	}
 
 	@Override

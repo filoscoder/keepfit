@@ -21,9 +21,11 @@ public class CommentDAOImpl implements CommentDAO{
 	
 	// 댓글 추가
 	@Override
-	public void insertComment(CommentVO vo) {
+	public int insertComment(CommentVO vo) {
 		System.out.println("===> Mybatis insertComment() 호출");
-		mybatis.insert("db.insertComment", vo);		
+		mybatis.insert("db.insertComment", vo);
+		int countComment = mybatis.selectOne("db.getCommentCnt", vo);
+		return countComment;
 	}
 	
 	// 댓글 수정
@@ -42,8 +44,8 @@ public class CommentDAOImpl implements CommentDAO{
 
 	// 댓글 개수 조회
 	@Override
-	public int getComment(CommentVO vo) {
-		System.out.println("===> Mybatis getComment() 호출");
+	public CommentVO getComment(CommentVO vo) {
+		System.out.println("===> Mybatis getComment() 호출");		
 		return mybatis.selectOne("db.getComment", vo);
 	}
 

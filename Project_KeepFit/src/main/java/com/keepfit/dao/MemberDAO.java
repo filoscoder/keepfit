@@ -24,4 +24,7 @@ public interface MemberDAO {
 
 	// 회원가입 및 로그인시 id체크	
 	MemberVO idCheck(MemberVO vo);
+	
+	public MemberVO loginMember(MemberVO vo);
+	
 }

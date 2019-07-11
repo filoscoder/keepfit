@@ -11,7 +11,7 @@ public interface PostService {
 	
 	// CRUD 기능의 메소드 구현	
 	// 게시물 등록
-	void insertPost(PostVO vo);
+	int insertPost(PostVO vo);
 	
 	// 게시물 수정
 	void updatePost(PostVO vo) ;

@@ -9,7 +9,7 @@ import com.keepfit.domain.MemberVO;
 public interface CommentDAO {
 	
 	// 댓글 추가
-	public void insertComment(CommentVO vo);
+	public int insertComment(CommentVO vo);
 	
 	// 댓글 수정
 	public void updateComment(CommentVO vo) ;
@@ -18,7 +18,7 @@ public interface CommentDAO {
 	public void deleteComment(CommentVO vo);
 
 	// 댓글 개수 조회
-	public int getComment(CommentVO vo);
+	public CommentVO getComment(CommentVO vo);
 	
 	// 총 댓글 조회
 	public List<CommentVO> getCommentList(CommentVO vo);

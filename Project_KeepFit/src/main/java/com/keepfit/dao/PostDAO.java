@@ -9,7 +9,7 @@ import com.keepfit.domain.PostVO;
 public interface PostDAO {
 	
 	// 게시물 등록
-	public void insertPost(PostVO vo);
+	public int insertPost(PostVO vo);
 	
 	// 게시물 수정
 	public void updatePost(PostVO vo) ;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.keepfit.dao.MemberDAOImpl;
+import com.keepfit.dao.MemberDAO;
 import com.keepfit.domain.MemberVO;
 
 
@@ -13,7 +13,7 @@ import com.keepfit.domain.MemberVO;
 public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
-	private MemberDAOImpl memberDAO;
+	private MemberDAO memberDAO;
 
 
 	@Override
@@ -52,7 +52,6 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberVO loginMember(MemberVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		return memberDAO.loginMember(vo);
 	}
 }
