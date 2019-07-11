@@ -30,12 +30,11 @@ public class Controller {
 	    public String common(@PathVariable String url) {
 	        System.out.println("common 호출!");
 	        return url;
-	    }
-	    
+	    }	    
 
 	
 	
-	@RequestMapping(value = {"login.fit"})
+	@RequestMapping(value = {"login.do"})
 	public ModelAndView login(MemberVO vo) {
 		// [MEMBER DB] 에서  [email]과 [password] 확인
 		MemberVO logUser = memberService.loginMember(vo);
