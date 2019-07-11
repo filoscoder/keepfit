@@ -15,9 +15,6 @@
 
 <form action="signup.do">
 
-<!-- <input type="hidden" name="member_email" value=request.getParameter(email)>
-<input type="hidden" name="member_pass" value=request.getParameter(pass)> -->
-
 <input type="hidden" name="member_email" value=<%=email%>>
 <input type="hidden" name="member_pass" value=<%=pass%>>
 
