@@ -15,13 +15,11 @@
 <hr/>
 <hr/>
 
-<a href="login.fit">TEST : 로그인</a>
-
 
 <form action="TEST-signup.do" method="get">
 <ul>
 
-<li>이메일 :<input type="text" name="email">
+<li>이메일 : <input type="text" name="email">
 <li>비밀번호 : <input type="text" name="pass">
 
 <li><input type="submit" value="TEST : signup" >
