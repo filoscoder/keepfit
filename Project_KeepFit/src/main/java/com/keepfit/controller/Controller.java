@@ -168,12 +168,49 @@ public class Controller {
 	 * [글쓰기] HANDLERS
 	 *************************************************************************************************/
 	
+	@RequestMapping(value = { "getPostList.do" })
+	public ModelAndView getPostList(PostVO vo, WebRequest request) {
+		// [COMMENT DB]에 [post_id]의 댓글을 모두 조회
+		List<PostVO> postList = postService.getPostList(vo);
+
+		if (postList != null) {
+			mv.addObject("postList", postList); // ****FRONT: parameter 수정가능
+			System.out.println("전체 게시글 조회");
+			mv.setViewName("TEST-comment"); // ****FRONT: view url 수정가능
+			return mv;
+		} else {
+			mv.addObject("commentStatus", "0"); // ****FRONT: parameter 수정가능
+			System.out.println("게시글 없음");
+			return mv;
+		}
+	}
+	
+	@RequestMapping(value = { "insertPost.do" })
 	public ModelAndView insertPost (PostVO vo) {
+		System.out.println("insertPost() 호출");
 		int countPost = postService.insertPost(vo);
-		
-		
+		mv.addObject("countPost", countPost);	
+		mv.setViewName("index");
+			
 		return mv;
 	}
 	
+	@RequestMapping(value = { "deletePost.do" })
+	public ModelAndView deletePost (PostVO vo) {
+		System.out.println("deletePost() 호출");
+		postService.deletePost(vo);
+		mv.setViewName("index");		// ****TEAM-FRONT: view url 수정가능
+			
+		return mv;
+	}
+	
+	@RequestMapping(value = { "updatePost.do" })
+	public ModelAndView updatePost (PostVO vo) {
+		System.out.println("updatePost() 호출");
+		postService.updatePost(vo);
+		mv.setViewName("index");		// ****TEAM-FRONT: view url 수정가능
+			
+		return mv;
+	}
 
 } // END OF Controller CLASS

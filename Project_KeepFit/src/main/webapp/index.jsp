@@ -55,6 +55,11 @@
 		<a href="getCommentList.do">TEST : 댓글 모두 조회</a>
 	</div>
 	<hr />	<hr />
+	
+	<div>
+		<a href="newPost.jsp">TEST : 새 게시물 작성</a>
+	</div>
+	<hr />	<hr />
 
 </body>
 </html>
