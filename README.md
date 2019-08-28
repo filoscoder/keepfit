@@ -20,8 +20,8 @@
   <li>Trello (ATTLASIAN)</li>
   </ul>
  
- <br/><br/><br/>
- <div align='left'><p>*********Feel free to fork, contribute and make constructive comments *********</p></div>
+ <br/><br/><br/><br/><br/>
+ <div align='center'><p>*********Feel free to fork, contribute and make constructive comments *********</p></div>
 
 <div align='left'><p>Credits</p>
 <ul>
