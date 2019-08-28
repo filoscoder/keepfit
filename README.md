@@ -10,20 +10,20 @@
   
  <h3>| Dev enviroment |</h3>
   <ul>
-  <li>Android 9.0.</li>
-  <li>Java 1.8</li>
+  <li>Android 9.0. (Tests on Samsung Galaxy Note 8)</li>
+  <li>Java 1.8 (JDK)</li>
   <li>Spring (STS framework)</li>
   <li>MyBatis</li>
-  <li>Apache TomCat 9.0</li>
+  <li>Apache TomCat 9.0 (web server)</li>
   <li>Oracle Database 19.1</li>
   <li>SourceTree (GitHub vcs)</li>
-  <li>Trello</li>
+  <li>Trello (ATTLASIAN)</li>
   </ul>
  
  <br/><br/><br/>
- <div align='center'><p>*********Feel free to fork, contribute and make constructive comments *********</p></div>
+ <div align='left'><p>*********Feel free to fork, contribute and make constructive comments *********</p></div>
 
-<div align='right'><p>Credits</p>
+<div align='left'><p>Credits</p>
 <ul>
   <li>FRONT-END: <a href="https://github.com/ehan831/">Eungu, Han&copy;</a></li>
   <li>BACK-END (PM): <a href="https://github.com/filoscoder/">Wonjang, Son&copy;</a></li>
