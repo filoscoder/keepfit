@@ -20,8 +20,9 @@
   <li>SourceTree (GitHub vcs)</li>
   <li>Trello (ATTLASIAN)</li>
   </ul>
- <div align="center"><img src="https://github.com/filoscoder/keepfit/blob/master/Project_KeepFit/src/main/webapp/resources/images/slogan.PNG"/></div>
- <br/><br/><br/><br/><br/>
+  
+  <br/><br/><br/><br/><br/>
+ <div align="center"><img src="https://github.com/filoscoder/keepfit/blob/master/Project_KeepFit/src/main/webapp/resources/images/slogan.PNG"/></div> 
  <div align='center'><p>*********Feel free to fork, contribute and make constructive comments *********</p></div>
 
 <div align='left'><p>Credits</p>
