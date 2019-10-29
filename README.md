@@ -13,7 +13,7 @@
   <ul>
   <li>Android 9.0. (Tests on Samsung Galaxy Note 8)</li>
   <li>Java 1.8 (JDK)</li>
-  <li>Spring (STS framework)</li>
+  <li>Spring (STS framework v3)</li>
   <li>MyBatis</li>
   <li>Apache TomCat 9.0 (web server)</li>
   <li>Oracle Database 19.1</li>
