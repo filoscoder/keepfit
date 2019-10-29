@@ -27,9 +27,9 @@
 
 <div align='left'><p>Credits</p>
 <ul>
-  <li>FRONT-END: <a href="https://github.com/ehan831/">Eungu, Han&copy;</a></li>
-  <li>BACK-END (PM): <a href="https://github.com/filoscoder/">Wonjang, Son&copy;</a> (Me)</li>
-  <li>BACK-END: <a href="https://github.com/hmg612/">Mingi, Hong&copy;</a></li>
-  <li>ANDROID: <a href="https://github.com/oggong/">Minsuk, Oh&copy;</a></li>
+  <li>FRONT-END: <a href="https://github.com/ehan831/">Eungu, Han</a></li>
+  <li>BACK-END (PM): <a href="https://github.com/filoscoder/">Wonjang, Son</a> (Me)</li>
+  <li>BACK-END: <a href="https://github.com/hmg612/">Mingi, Hong</a></li>
+  <li>ANDROID: <a href="https://github.com/oggong/">Minsuk, Oh</a></li>
   </ul>
 </div>
